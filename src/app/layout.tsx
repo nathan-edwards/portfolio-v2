@@ -10,6 +10,7 @@ config.autoAddCss = false;
 const nunito = Nunito({ subsets: ["latin"], variable: "--font-nunito" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nathanedwards.io"),
   title: "Nathan Edwards",
   description: "Personal portfolio site Nathan Edwards",
   authors: [{ name: "Nathan Edwards" }],

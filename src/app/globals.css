@@ -1,3 +1,80 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --background: white;
+  --foreground: black;
+  --color1: #7FBC8C;
+  --color2: #E3A018;
+  --color3: #FF6B6B;
+  --color4: #232122;
+  --color5: #f8fadf;
+  --hue: 223;
+  --primary: var(--color1);
+  --trans-dur: 0.6s;
+  --trans-timing: cubic-bezier(0.65, 0, 0.35, 1);
+  scroll-behavior: smooth;
+}
+
+[data-theme="dark"] {
+  --background: black;
+  --foreground: white;
+}
+
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+
+  to {
+    background-position: -200% center;
+  }
+}
+
+.gradient-text {
+  animation: background-pan 3s linear infinite;
+  background: linear-gradient(
+    to right,
+    var(--color1),
+    var(--color2),
+    var(--color3),
+    var(--color1)
+  );
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+.confetti-dot {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+.confetti-dot:active {
+  transform: scale(1.01);
+}
+
+.disable-text-selection {
+  -moz-user-select: none; /* firefox */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE*/
+  user-select: none; /* Standard syntax */
+}
+
+.tech-tag {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  margin: 0 0.5rem 0 0;
+  border-radius: 1rem;
+  background: #ffffff;
+  color: #000000;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.025rem;
+  /* border: #000000 1px solid; */
+  line-clamp: 1;
+}

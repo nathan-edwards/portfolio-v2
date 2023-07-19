@@ -1,24 +1,54 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faClose, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faClose,
+  faMoon,
+  faSun,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faGithub,
+  faDribbble,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
+import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
+import { useTheme } from "next-themes";
 import React, { useState } from "react";
 
 export default function Navbar() {
+  const { theme, setTheme } = useTheme();
   const [open, setOpen] = useState(false);
+
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    const href = e.currentTarget.href;
+    const targetId = href.replace(/.*\#/, "");
+    const elem = document.getElementById(targetId);
+    elem?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   const handleOpen = () => {
     setOpen(!open);
   };
-  const [darkMode, setDarkMode] = useState(false);
-  const handleDarkMode = () => {
-    setDarkMode(!darkMode);
+
+  const handleTheme = () => {
+    if (theme === "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
   };
 
   return (
-    <div className="max-w flex h-12 items-center justify-between backdrop-blur tracking-tight">
+    <div className="flex h-12 w-full flex-wrap items-center justify-between tracking-tight backdrop-blur ">
       <div>
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
+          className="relative dark:invert"
           src="/logo.svg"
           alt="N Edwards"
           width={90}
@@ -27,103 +57,125 @@ export default function Navbar() {
         />
       </div>
       <div>
-        <ul className="hidden items-center md:flex md:flex-row md:border-none font-bold">
+        <ul className="sticky hidden font-semibold tracking-tight md:flex md:flex-row md:border-none">
           <li className="md:mr-4">
             <Link
-              className="block px-4 py-2 hover:text-green-800 md:inline-block md:px-2 md:py-0 "
+              className="relative px-4 py-2 text-xl hover:text-[#E3A018] md:inline-block md:px-2 md:py-0 "
               href="/"
-              // onClick={handleSroll}
             >
               Home
             </Link>
           </li>
-          <li className="md:mr-4">
+          {/* <li className="md:mr-4">
             <Link
-              className="block px-4 py-2 hover:text-green-800 md:inline-block md:px-2 md:py-0 "
+              className="relative px-4 py-2 text-xl hover:text-[#3b8d53] md:inline-block md:px-2 md:py-0 "
               href="#about"
-              // onClick={handleSroll}
-            >
+              onClick={handleClick}            >
               About
             </Link>
-          </li>
+          </li> */}
           <li className="md:mr-4">
             <Link
-              className="block px-4 py-2 hover:text-green-800 md:inline-block md:px-2 md:py-0"
+              className="relative px-4 py-2 text-xl  hover:text-[#E3A018] md:inline-block md:px-2 md:py-0"
               href="#projects"
-              // onClick={handleScroll}
+              onClick={handleScroll}
             >
               Projects
             </Link>
           </li>
           <li>
             <Link
-              className="block px-4 py-2 hover:text-green-800 md:inline-block md:px-2 md:py-0"
+              className="relative px-4 py-2 text-xl hover:text-[#E3A018] md:inline-block md:px-2 md:py-0"
               href="#contact"
-              // onClick={handleScroll}
+              onClick={handleScroll}
             >
               Contact
             </Link>
           </li>
         </ul>
       </div>
-      <div onClick={handleOpen} className="block md:hidden pl-3 pr-1 md:pr-0">
+      <div>
+        <button
+          onClick={handleTheme}
+          className="mr-1 hidden rounded-full border border-black bg-white text-center shadow-[3px_4px_rgb(0,0,0)] transition-all duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[6px_7px_rgb(0,0,0)] active:translate-x-2 active:translate-y-2 active:shadow-none dark:border-white dark:bg-black dark:shadow-[3px_4px_rgb(256,256,256)] dark:hover:shadow-[6px_7px_rgb(256,256,256)] dark:active:shadow-none md:mr-1 md:block lg:mr-1"
+        >
+          {theme === "light" ? (
+            <FontAwesomeIcon icon={faSun} size="xl" className="mx-2 my-2" />
+          ) : (
+            <FontAwesomeIcon icon={faMoon} size="xl" className="mx-2 my-1" />
+          )}
+        </button>
+        <div />
+      </div>
+      <div
+        onClick={handleOpen}
+        className="relative flex items-center md:hidden"
+      >
         {!open ? (
-          <FontAwesomeIcon
-            icon={faBars}
-            size="2x"
-          />
+          <FontAwesomeIcon icon={faBars} size="2x" />
         ) : (
-          <FontAwesomeIcon
-            icon={faClose}
-            size="2x"
-          />
+          <FontAwesomeIcon icon={faClose} size="2x" />
         )}
       </div>
       <div className={open ? "sticky h-full w-[60%]" : "hidden"}>
         <ul className="flex flex-col items-center">
-          <li className="md:mr-4">
+          {/* <li className="md:mr-4">
             <Link
-              className="block px-4 py-2 hover:text-green-800 md:inline-block md:px-2 md:py-0 "
+              className="block px-4 py-2 hover:text-[#3b8d53] md:inline-block md:px-2 md:py-0 "
               href="#about"
               // onClick={handleSroll}
             >
               <b>About</b>
             </Link>
-          </li>
+          </li> */}
           <li className="md:mr-4">
             <Link
-              className="block px-4 py-2 hover:text-green-800 md:inline-block md:px-2 md:py-0"
+              className="block px-4 py-2 hover:text-[#3b8d53] md:inline-block md:px-2 md:py-0"
               href="#projects"
-              // onClick={handleScroll}
+              onClick={handleScroll}
             >
               <b>Projects</b>
             </Link>
           </li>
           <li>
             <Link
-              className="block px-4 py-2 hover:text-green-800 md:inline-block md:px-2 md:py-0"
+              className="block px-4 py-2 hover:text-[#3b8d53] md:inline-block md:px-2 md:py-0"
               href="#contact"
-              // onClick={handleScroll}
+              onClick={handleScroll}
             >
               <b>Contact</b>
             </Link>
           </li>
         </ul>
-      </div>
-      <div className="hidden md:block pl-3 pr-1 md:pr-0">
-        {!darkMode ? (
-          <FontAwesomeIcon
-            onClick={handleDarkMode}
-            icon={faMoon}
-            size="2x"
-          />
-        ) : (
-          <FontAwesomeIcon
-            onClick={handleDarkMode}
-            icon={faSun}
-            size="2x"
-          />
-        )}
+        <ul className="mt-8 flex">
+          <li className="col-auto m-auto flex">
+            <FontAwesomeIcon icon={faGithub} size="xl" className="pr-3" />
+            <p className="m-auto text-xl text-black">Github</p>
+            <FontAwesomeIcon
+              icon={faExternalLink}
+              size="1x"
+              className="m-auto pl-2"
+            />
+          </li>
+          <li className="col-auto m-auto flex">
+            <FontAwesomeIcon icon={faLinkedin} size="xl" className="pr-3" />
+            <p className="m-auto text-xl text-black">LinkedIn</p>
+            <FontAwesomeIcon
+              icon={faExternalLink}
+              size="sm"
+              className="m-auto pl-2"
+            />
+          </li>
+          <li className="col-auto m-auto flex">
+            <FontAwesomeIcon icon={faDribbble} size="xl" className="pr-3" />
+            <p className="m-auto text-xl text-black">Dribbble</p>
+            <FontAwesomeIcon
+              icon={faExternalLink}
+              size="sm"
+              className="m-auto pl-2"
+            />
+          </li>
+        </ul>
       </div>
     </div>
   );

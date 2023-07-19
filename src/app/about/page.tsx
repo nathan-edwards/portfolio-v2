@@ -1,7 +1,7 @@
 export default function About() {
   return (
-    <section className="z-0 flex h-screen min-h-screen snap-start flex-col justify-between">
-      About
+    <section className="flex min-h-screen snap-start flex-col justify-center p-6">
+      <div className="m-auto flex"></div>
     </section>
   );
 }
