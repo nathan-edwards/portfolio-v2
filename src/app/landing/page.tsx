@@ -32,7 +32,7 @@ export default function Landing() {
             <br /> and Aspiring <b className="font-extrabold">Programmer</b>
             {/* Shhh Secret Confetti Button */}
             <a
-              className="confetti-dot disable-text-selection text-2xl font-black text-[#E3A018] md:text-6xl"
+              className="confetti-dot disable-text-selection text-2xl font-black text-[#FF6B6B] md:text-6xl"
               onClick={() => {
                 confetti({
                   particleCount: 150,
@@ -93,13 +93,15 @@ export default function Landing() {
         {/* Photo */}
         <div className="mr-2 hidden lg:block">
           <Image
+            rel="preload"
+            fetchPriority="high"
             src="/me.jpg"
             alt="Picture of the Developer"
             quality={100}
             priority
             height={960}
             width={540}
-            className="border border-double border-black bg-black shadow-[12px_16px_rgb(0,0,0)] dark:border-white dark:bg-white dark:shadow-[12px_16px_rgb(256,256,256)]"
+            className="rounded-lg border border-double border-black bg-black shadow-[12px_16px_rgb(0,0,0)] dark:border-white dark:bg-white dark:shadow-[12px_16px_rgb(256,256,256)]"
           />
         </div>
       </div>

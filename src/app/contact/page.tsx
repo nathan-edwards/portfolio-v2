@@ -140,7 +140,7 @@ export default function Contact() {
         </div>
       </div>
 
-      <footer className="mt-16 h-10 w-full flex flex-col items-center">
+      <footer className="mt-16 flex h-10 w-full flex-col items-center">
         <p className="flex items-center justify-between font-medium">
           Designed & Developed by{" "}
           <b className="gradient-text pl-1"> Nathan Edwards</b>

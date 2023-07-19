@@ -19,7 +19,7 @@ import { useTheme } from "next-themes";
 import React, { useState } from "react";
 
 export default function Navbar() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [open, setOpen] = useState(false);
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -37,7 +37,7 @@ export default function Navbar() {
   };
 
   const handleTheme = () => {
-    if (theme === "light") {
+    if (resolvedTheme === "light") {
       setTheme("dark");
     } else {
       setTheme("light");
@@ -99,31 +99,34 @@ export default function Navbar() {
           onClick={handleTheme}
           className="mr-1 hidden rounded-full border border-black bg-white text-center shadow-[3px_4px_rgb(0,0,0)] transition-all duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[6px_7px_rgb(0,0,0)] active:translate-x-2 active:translate-y-2 active:shadow-none dark:border-white dark:bg-black dark:shadow-[3px_4px_rgb(256,256,256)] dark:hover:shadow-[6px_7px_rgb(256,256,256)] dark:active:shadow-none md:mr-1 md:block lg:mr-1"
         >
-          {theme === "light" ? (
-            <FontAwesomeIcon icon={faSun} size="xl" className="mx-2 my-2" />
-          ) : (
+          {resolvedTheme === "light" ? (
             <FontAwesomeIcon icon={faMoon} size="xl" className="mx-2 my-1" />
+          ) : (
+            <FontAwesomeIcon icon={faSun} size="lg" className="mx-2 my-2" />
           )}
         </button>
         <div />
       </div>
-      <div
-        onClick={handleOpen}
-        className="relative flex items-center md:hidden"
-      >
+      <div onClick={handleOpen} className="relative mr-1 flex md:hidden">
         {!open ? (
           <FontAwesomeIcon icon={faBars} size="2x" />
         ) : (
           <FontAwesomeIcon icon={faClose} size="2x" />
         )}
       </div>
-      <div className={open ? "sticky h-full w-[60%]" : "hidden"}>
-        <ul className="flex flex-col items-center">
+      <div
+        className={
+          open
+            ? "relative top-3 z-30 h-24 w-full border-b border-black"
+            : "hidden"
+        }
+      >
+        <ul className="gap-2px flex flex-col items-center">
           {/* <li className="md:mr-4">
             <Link
-              className="block px-4 py-2 hover:text-[#3b8d53] md:inline-block md:px-2 md:py-0 "
+              className="block px-4 py-2 hover:text-[#3b8d53] md:inline-block md:px-2 md:py-0"
               href="#about"
-              // onClick={handleSroll}
+              onClick={handleScroll}
             >
               <b>About</b>
             </Link>
@@ -145,35 +148,6 @@ export default function Navbar() {
             >
               <b>Contact</b>
             </Link>
-          </li>
-        </ul>
-        <ul className="mt-8 flex">
-          <li className="col-auto m-auto flex">
-            <FontAwesomeIcon icon={faGithub} size="xl" className="pr-3" />
-            <p className="m-auto text-xl text-black">Github</p>
-            <FontAwesomeIcon
-              icon={faExternalLink}
-              size="1x"
-              className="m-auto pl-2"
-            />
-          </li>
-          <li className="col-auto m-auto flex">
-            <FontAwesomeIcon icon={faLinkedin} size="xl" className="pr-3" />
-            <p className="m-auto text-xl text-black">LinkedIn</p>
-            <FontAwesomeIcon
-              icon={faExternalLink}
-              size="sm"
-              className="m-auto pl-2"
-            />
-          </li>
-          <li className="col-auto m-auto flex">
-            <FontAwesomeIcon icon={faDribbble} size="xl" className="pr-3" />
-            <p className="m-auto text-xl text-black">Dribbble</p>
-            <FontAwesomeIcon
-              icon={faExternalLink}
-              size="sm"
-              className="m-auto pl-2"
-            />
           </li>
         </ul>
       </div>

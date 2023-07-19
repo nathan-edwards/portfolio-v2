@@ -5,11 +5,9 @@
 :root {
   --background: white;
   --foreground: black;
-  --color1: #7FBC8C;
-  --color2: #E3A018;
-  --color3: #FF6B6B;
-  --color4: #232122;
-  --color5: #f8fadf;
+  --color1: #7fbc8c;
+  --color2: #e3a018;
+  --color3: #ff6b6b;
   --hue: 223;
   --primary: var(--color1);
   --trans-dur: 0.6s;
@@ -75,6 +73,5 @@
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.025rem;
-  /* border: #000000 1px solid; */
   line-clamp: 1;
 }

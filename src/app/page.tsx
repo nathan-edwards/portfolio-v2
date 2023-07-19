@@ -9,7 +9,7 @@ export default function App() {
   return (
     <>
       <ThemeProvider attribute="class" enableSystem={true}>
-        <div className="h-screen w-screen snap-y overflow-y-scroll">
+        <div className="h-screen w-screen overflow-y-scroll">
           <Landing />
           <Projects />
           <Contact />
