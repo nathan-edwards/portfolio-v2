@@ -2,6 +2,7 @@ import React from "react";
 import { Metadata } from "next/types";
 import { Nunito } from "next/font/google";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import { Analytics } from "@vercel/analytics/react";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./globals.css";
 
@@ -39,6 +40,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${nunito.variable} font-sans antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
