@@ -29,7 +29,7 @@ export default function Landing() {
         <div className="my-auto lg:mr-24">
           <h1 className="block text-center text-4xl font-light leading-tight tracking-tight md:text-left md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight">
             <b className="font-extrabold">Computer Science Graduate</b>
-            <br /> and Aspiring <b className="font-extrabold">Programmer</b>
+            <br /> and Avid <b className="font-extrabold">Programmer</b>
             {/* Shhh Secret Confetti Button */}
             <a
               className="confetti-dot disable-text-selection text-2xl font-black text-[#FF6B6B] md:text-6xl"

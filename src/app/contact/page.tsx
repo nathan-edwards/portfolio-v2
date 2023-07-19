@@ -54,7 +54,7 @@ export default function Contact() {
               target="_blank"
               href="https://www.linkedin.com/in/nathanedwards256/"
               rel="noopener noreferrer"
-              className="mr-5 mt-1 inline-block h-3/4 cursor-pointer rounded-full border border-black bg-[#E3A018]  px-[15px] py-3 text-center font-bold shadow-none transition-all duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[3px_4px_rgb(0,0,0)] active:translate-x-0 active:translate-y-0 active:shadow-none dark:border-white dark:bg-black dark:shadow-none dark:hover:shadow-[3px_4px_rgb(256,256,256)] dark:active:shadow-none"
+              className="mr-5 dark:bg-[#E3A018] mt-1 text-black inline-block h-3/4 cursor-pointer rounded-full border border-black bg-[#E3A018]  px-[15px] py-3 text-center font-bold shadow-none transition-all duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[3px_4px_rgb(0,0,0)] active:translate-x-0 active:translate-y-0 active:shadow-none dark:border-white dark:shadow-none dark:hover:shadow-[3px_4px_rgb(256,256,256)] dark:active:shadow-none"
             >
               <FontAwesomeIcon icon={faLinkedinIn} size="xl" className="" />
             </a>
@@ -63,7 +63,7 @@ export default function Contact() {
               href="
                 mailto:nathan.edwards256@gmail.com"
               rel="noopener noreferrer"
-              className="mr-6 mt-1 inline-block h-3/4 cursor-pointer rounded-md border border-black bg-[#E3A018]  px-6 py-3 text-center font-bold shadow-none transition-all duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[3px_4px_rgb(0,0,0)] active:translate-x-0 active:translate-y-0 active:shadow-none dark:border-white dark:bg-black dark:shadow-none dark:hover:shadow-[3px_4px_rgb(256,256,256)] dark:active:shadow-none"
+              className="mr-6 mt-1 inline-block h-3/4 text-black cursor-pointer rounded-md border border-black bg-[#E3A018]  px-6 py-3 text-center font-bold shadow-none transition-all duration-300 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[3px_4px_rgb(0,0,0)] active:translate-x-0 active:translate-y-0 active:shadow-none dark:border-white dark:bg-[#E3A018] dark:shadow-none dark:hover:shadow-[3px_4px_rgb(256,256,256)] dark:active:shadow-none"
             >
               nathan.edwards256@gmail.com
             </a>

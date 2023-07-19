@@ -17,8 +17,8 @@ export default function Projects() {
             <b>Projects</b>
           </h1>
           <h2 className="text-lg">
-            Check out some of my projects below! I&apos;m always working on new
-            projects, so check back soon for more.
+            Check out some of my projects below. This website is constantly
+            being updated with newer projects.
           </h2>
         </div>
       </div>
@@ -28,6 +28,8 @@ export default function Projects() {
         <div className="h-min justify-between overflow-auto rounded-xl bg-black shadow-[12px_16px_rgb(0,0,0)] dark:bg-white dark:shadow-[12px_16px_rgb(256,256,256)] md:flex">
           {/* Small Screen Image */}
           <Image
+            rel="preload"
+            fetchPriority="high"
             src="/grimoire.png"
             alt="Project Image"
             width="1024"
@@ -69,6 +71,8 @@ export default function Projects() {
           </div>
           {/* Large Screen Image */}
           <Image
+            rel="preload"
+            fetchPriority="high"
             src="/grimoire.png"
             alt="Grimoire Theme Preview"
             width="1024"
@@ -80,6 +84,8 @@ export default function Projects() {
         <div className="h-min justify-between overflow-auto rounded-xl bg-black shadow-[12px_16px_rgb(0,0,0)] dark:bg-white dark:shadow-[12px_16px_rgb(256,256,256)] md:flex">
           {/* Small Screen Image */}
           <Image
+            rel="preload"
+            fetchPriority="high"
             src="/inbetween.png"
             alt="Game Preview"
             width="1024"
@@ -121,6 +127,8 @@ export default function Projects() {
           </div>
           {/* Large Screen Image */}
           <Image
+            rel="preload"
+            fetchPriority="high"
             src="/inbetween.png"
             alt="Game Preview"
             width="1024"
@@ -132,6 +140,8 @@ export default function Projects() {
         <div className="h-min justify-between overflow-auto rounded-xl bg-black shadow-[12px_16px_rgb(0,0,0)] dark:bg-white dark:shadow-[12px_16px_rgb(256,256,256)] md:flex">
           {/* Small Screen Image */}
           <Image
+            rel="preload"
+            fetchPriority="high"
             src="/janet.png"
             alt="Janet Preview"
             width="1024"
@@ -165,6 +175,8 @@ export default function Projects() {
           </div>
           {/* Large Screen Image */}
           <Image
+            rel="preload"
+            fetchPriority="high"
             src="/janet.png"
             alt="Janet Preview"
             width="1024"
@@ -176,6 +188,8 @@ export default function Projects() {
         <div className="h-min justify-between overflow-auto rounded-xl bg-black shadow-[12px_16px_rgb(0,0,0)] dark:bg-white dark:shadow-[12px_16px_rgb(256,256,256)] md:flex">
           {/* Small Screen Image */}
           <Image
+            rel="preload"
+            fetchPriority="high"
             src="/portfolio.jpeg"
             alt="Portfolio Preview"
             width="1024"
@@ -219,6 +233,8 @@ export default function Projects() {
           </div>
           {/* Large Screen Image */}
           <Image
+            rel="preload"
+            fetchPriority="high"
             src="/portfolio.jpeg"
             alt="Portfolio Preview"
             width="1024"
