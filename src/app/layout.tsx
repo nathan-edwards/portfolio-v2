@@ -3,6 +3,7 @@ import { Metadata } from "next/types";
 import { Nunito } from "next/font/google";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./globals.css";
 
@@ -39,8 +40,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${nunito.variable} font-sans antialiased`}>
-        {children}
         <Analytics />
+        <SpeedInsights />
+        {children}
       </body>
     </html>
   );
